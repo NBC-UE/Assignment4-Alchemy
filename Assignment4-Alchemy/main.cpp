@@ -104,6 +104,7 @@ int main() {
 
             bool isSuccess = myWorkshop.ReturnPotion(s);
             if (isSuccess) {
+                potions[s]--;
                 cout << "물약을 반환합니다.\n";
             }
             else {

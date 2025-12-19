@@ -68,10 +68,11 @@ void AlchemyWorkshop::displayAllRecipes() const
     for (size_t i = 0; i < recipes.size(); ++i) {
         cnt++;
         const string& name = recipes[i].potionName;
-        if (stockManager->getStock(name) <= 0) {
+        int stock = stockManager->getStock(name);
+        if (stock <= 0) {
             continue;
         }
-        cout << "- 물약 이름: " << recipes[i].potionName << endl;
+        cout << "- 물약 이름: " << recipes[i].potionName << ", 재고: " << stock << endl;
         cout << "  > 필요 재료: ";
 
         // 재료 목록을 순회하며 출력
